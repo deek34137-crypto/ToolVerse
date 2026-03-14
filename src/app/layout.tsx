@@ -6,8 +6,8 @@ import Navbar from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'NoteMind - AI-Powered Study Tool',
-  description: 'Convert your notes into mind maps, flashcards, quizzes, and summaries with AI.',
+  title: 'ToolVerse - AI-Powered Study Tools',
+  description: 'Transform your notes into mind maps, flashcards, quizzes, and summaries with AI.',
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white`}>
+      <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white antialiased`}>
         <Navbar />
         {children}
       </body>
