@@ -19,7 +19,7 @@ function TreeNode({ node }: { node: MindMapNode }) {
         <p className="text-gray-900 dark:text-white font-medium">{node.name}</p>
       </div>
       <div className="ml-4 border-l-2 border-blue-200 dark:border-blue-800 pl-4">
-        {node.children?.map((child, index) => (
+        {node.children && node.children.map((child, index) => (
           <TreeNode key={index} node={child} />
         ))}
       </div>
@@ -28,6 +28,8 @@ function TreeNode({ node }: { node: MindMapNode }) {
 }
 
 export default function MindMapView({ mindmap }: MindMapViewProps) {
+  if (!mindmap) return null;
+
   return (
     <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
       <div className="flex items-center space-x-3 mb-6">
